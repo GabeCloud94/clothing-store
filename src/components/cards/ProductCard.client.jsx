@@ -68,7 +68,7 @@ export function ProductCard({product, label, className, loading, onClick}) {
           >
             {product.title}
           </Text>
-          <div className="flex gap-4">
+          <div className="flex gap-4 pb-4">
             <Text className="flex gap-4">
               <Money withoutTrailingZeros data={price} />
               {isDiscounted(price, compareAtPrice) && (

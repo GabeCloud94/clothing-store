@@ -9,7 +9,13 @@ export default defineConfig({
     alias: [{find: /^~\/(.*)/, replacement: '/src/$1'}],
   },
   optimizeDeps: {
-    include: ['@headlessui/react', 'clsx', 'react-use', 'typographic-base'],
+    include: [
+      '@headlessui/react',
+      'clsx',
+      'react-use',
+      'typographic-base',
+      '@ant-design/react-slick',
+    ],
   },
   test: {
     globals: true,

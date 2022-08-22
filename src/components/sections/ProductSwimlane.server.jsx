@@ -1,20 +1,19 @@
 import {Suspense, useMemo} from 'react';
 import {gql, useShopQuery, useLocalization} from '@shopify/hydrogen';
 import {PRODUCT_CARD_FRAGMENT} from '~/lib/fragments';
-import {ProductCard, Section} from '~/components';
+import {SimpleSlider} from '~/components';
 
 const mockProducts = new Array(12).fill('');
 
-export function ProductSwimlane({
-  title = 'Featured Products',
-  data = mockProducts,
-  count = 12,
-  ...props
-}) {
+export function ProductSwimlane({data = mockProducts, count = 12}) {
   const productCardsMarkup = useMemo(() => {
     // If the data is already provided, there's no need to query it, so we'll just return the data
     if (typeof data === 'object') {
-      return <ProductCards products={data} />;
+      return (
+        <Suspense>
+          <SimpleSlider products={data} />
+        </Suspense>
+      );
     }
 
     // If the data provided is a productId, we will query the productRecommendations API.
@@ -32,27 +31,27 @@ export function ProductSwimlane({
   }, [count, data]);
 
   return (
-    <Section heading={title} padding="y" {...props}>
-      <div className="swimlane hiddenScroll md:pb-8 md:scroll-px-8 lg:scroll-px-12 md:px-8 lg:px-12">
-        {productCardsMarkup}
-      </div>
-    </Section>
+    <div className="w-[93%] md:w-[95%] lg:w-[97%] pb-2">
+      {productCardsMarkup}
+    </div>
   );
 }
 
-function ProductCards({products}) {
-  return (
-    <>
-      {products.map((product) => (
-        <ProductCard
-          product={product}
-          key={product.id}
-          className={'snap-start w-80'}
-        />
-      ))}
-    </>
-  );
-}
+// function ProductCards({products}) {
+//   return (
+//     <>
+//       {products.map((product) => (
+//         <ProductCard
+//           product={product}
+//           key={product.id}
+//           className={
+//             'snap-start w-80 hover:scale-105 ease-in-out duration-300 cursor-pointer'
+//           }
+//         />
+//       ))}
+//     </>
+//   );
+// }
 
 function RecommendedProducts({productId, count}) {
   const {
@@ -83,7 +82,7 @@ function RecommendedProducts({productId, count}) {
 
   mergedProducts.splice(originalProduct, 1);
 
-  return <ProductCards products={mergedProducts} />;
+  return <SimpleSlider products={mergedProducts} />;
 }
 
 function TopProducts({count}) {
@@ -96,7 +95,7 @@ function TopProducts({count}) {
     },
   });
 
-  return <ProductCards products={products.nodes} />;
+  return <SimpleSlider products={products.nodes} />;
 }
 
 const RECOMMENDED_PRODUCTS_QUERY = gql`

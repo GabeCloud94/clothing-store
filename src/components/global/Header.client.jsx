@@ -146,7 +146,12 @@ function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
         <nav className="flex gap-8">
           {/* Top level menu items */}
           {(menu?.items || []).map((item) => (
-            <Link key={item.id} to={item.to} target={item.target}>
+            <Link
+              key={item.id}
+              to={item.to}
+              target={item.target}
+              className="hover:text-primary/20 duration-700"
+            >
               {item.title}
             </Link>
           ))}
