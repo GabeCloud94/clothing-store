@@ -150,7 +150,7 @@ function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
               key={item.id}
               to={item.to}
               target={item.target}
-              className="hover:text-primary/20 duration-700"
+              className="hover:text-notice duration-500"
             >
               {item.title}
             </Link>

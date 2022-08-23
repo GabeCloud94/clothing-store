@@ -19,7 +19,7 @@ export function FeaturedCollections({data, title = 'Collections', ...props}) {
           return (
             <Link key={collection.id} to={`/collections/${collection.handle}`}>
               <div className="grid gap-4">
-                <div className="card-image bg-primary/5 aspect-[3/2]">
+                <div className="card-image bg-primary/5 aspect-[3/2] hover:scale-105 duration-500 ease-in-out transition-all">
                   {collection?.image && (
                     <Image
                       alt={`Image of ${collection.title}`}

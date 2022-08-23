@@ -35,7 +35,7 @@ export function ProductCard({product, label, className, loading, onClick}) {
   return (
     <Link onClick={onClick} to={`/products/${product.handle}`}>
       <div className={styles}>
-        <div className="card-image aspect-[4/5] bg-primary/5">
+        <div className="card-image aspect-[5/5] bg-primary/5 hover:scale-105 duration-500 ease-in-out transition-all">
           <Text
             as="label"
             size="fine"
@@ -45,7 +45,7 @@ export function ProductCard({product, label, className, loading, onClick}) {
           </Text>
           {image && (
             <Image
-              className="aspect-[4/5] w-full object-cover fadeIn"
+              className="aspect-[5/5] w-full object-cover fadeIn"
               widths={[320]}
               sizes="320px"
               loaderOptions={{

@@ -15,9 +15,9 @@ body {
 
 /* Tokens */
 :root {
-  --color-primary: 20 20 20; /* Text, buttons, etc. */
-  --color-contrast: 250 250 249; /* Backgrounds, borders, etc. */
-  --color-accent: 191 72 0; /* Labels like "On sale" */
+  --color-primary: 34 40 46; /* Text, buttons, etc. */
+  --color-contrast: 245 239 230; /* Backgrounds, borders, etc. */
+  --color-accent: 160 149 133; /* Labels like "On sale" */
   --font-size-fine: 0.75rem; /* text-xs */
   --font-size-copy: 1rem; /* text-base */
   --font-size-lead: 1.125rem; /* text-lg */
@@ -43,9 +43,9 @@ body {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-primary: 250 250 250;
-    --color-contrast: 32 33 36;
-    --color-accent: 235 86 40;
+    --color-primary: 245 239 230;
+    --color-contrast: 34 40 46;
+    --color-accent: 160 149 133;
   }
 }
 
@@ -70,7 +70,7 @@ shop-pay-button {
   }
 
   body {
-    @apply antialiased text-primary/90 bg-contrast border-primary/10;
+    @apply antialiased text-primary bg-contrast border-primary/10;
   }
 
   html {
@@ -173,10 +173,10 @@ shop-pay-button {
   }
 
   .card-image {
-    @apply relative rounded overflow-clip flex justify-center items-center;
+    @apply relative rounded-xl overflow-clip flex justify-center items-center;
     &::before {
       content: ' ';
-      @apply z-10 absolute block top-0 left-0 w-full h-full shadow-border rounded;
+      @apply z-10 absolute block top-0 left-0 w-full h-full shadow-border rounded-xl;
     }
     img {
       @apply object-cover w-full aspect-[inherit];

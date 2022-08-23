@@ -67,7 +67,11 @@ export function Hero({
               {byline.value}
             </Text>
           )}
-          {cta?.value && <Text size="lead">{cta.value}</Text>}
+          {cta?.value && (
+            <Text size="lead" className="hover:text-notice duration-500">
+              {cta.value}
+            </Text>
+          )}
         </div>
       </section>
     </Link>
