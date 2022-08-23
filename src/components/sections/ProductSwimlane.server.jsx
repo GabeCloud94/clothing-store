@@ -30,11 +30,7 @@ export function ProductSwimlane({data = mockProducts, count = 12}) {
     return <TopProducts count={count} />;
   }, [count, data]);
 
-  return (
-    <div className="w-[92%] md:w-[95%] lg:w-[97%] pb-2">
-      {productCardsMarkup}
-    </div>
-  );
+  return <div className="pb-2">{productCardsMarkup}</div>;
 }
 
 // function ProductCards({products}) {
