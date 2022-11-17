@@ -16,7 +16,7 @@ body {
 /* Tokens */
 :root {
   --color-primary: 34 40 46; /* Text, buttons, etc. */
-  --color-contrast: 245 239 230; /* Backgrounds, borders, etc. */
+  --color-contrast: 255 255 255; /* Backgrounds, borders, etc. */
   --color-accent: 160 149 133; /* Labels like "On sale" */
   --font-size-fine: 0.75rem; /* text-xs */
   --font-size-copy: 1rem; /* text-base */
@@ -43,7 +43,7 @@ body {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-primary: 245 239 230;
+    --color-primary: 255 255 255;
     --color-contrast: 34 40 46;
     --color-accent: 160 149 133;
   }
