@@ -30,8 +30,8 @@ export function SimpleSlider({products}) {
       </h1>
       <Slider {...settings} className="mr-12">
         {products.map((product) => (
-          <div key={product.id} className="pl-4">
-            <ProductCard product={product} />
+          <div key={product.id} className="pl-4" aria-hidden="false">
+            <ProductCard product={product} aria-hidden="false" />
           </div>
         ))}
       </Slider>
