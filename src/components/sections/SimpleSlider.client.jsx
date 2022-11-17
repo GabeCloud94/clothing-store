@@ -7,6 +7,7 @@ export function SimpleSlider({products}) {
     infinite: true,
     arrows: true,
     slidesToShow: 4,
+    accessibility: true,
     responsive: [
       {
         breakpoint: 600,
