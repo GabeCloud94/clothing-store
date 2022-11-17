@@ -33,7 +33,11 @@ export function ProductCard({product, label, className, loading, onClick}) {
   const styles = clsx('grid gap-6 hover:text-notice duration-500', className);
 
   return (
-    <Link onClick={onClick} to={`/products/${product.handle}`}>
+    <Link
+      onClick={onClick}
+      to={`/products/${product.handle}`}
+      aria-hidden="false"
+    >
       <div className={styles}>
         <div className="card-image aspect-[5/5] bg-primary/5">
           <Text
