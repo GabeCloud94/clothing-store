@@ -38,8 +38,11 @@ export function ProductCard({product, label, className, loading, onClick}) {
       to={`/products/${product.handle}`}
       aria-hidden="false"
     >
-      <div className={styles}>
-        <div className="card-image aspect-[5/5] bg-primary/5">
+      <div className={styles} aria-hidden="false">
+        <div
+          className="card-image aspect-[5/5] bg-primary/5"
+          aria-hidden="false"
+        >
           <Text
             as="label"
             size="fine"
@@ -62,6 +65,7 @@ export function ProductCard({product, label, className, loading, onClick}) {
               data={image}
               alt={image.altText || `Picture of ${product.title}`}
               loading={loading}
+              aria-hidden="false"
             />
           )}
         </div>
